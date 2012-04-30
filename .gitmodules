@@ -1,6 +1,3 @@
-[submodule "Submodules/MUKNetworking"]
-	path = Submodules/MUKNetworking
-	url = git://github.com/muccy/MUKNetworking.git
 [submodule "Submodules/MUKToolkit"]
 	path = Submodules/MUKToolkit
 	url = git://github.com/muccy/MUKToolkit.git
