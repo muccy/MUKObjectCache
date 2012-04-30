@@ -54,7 +54,7 @@
     
     __block BOOL handlerCalled = NO;
     NSString *key = @"key0";
-    [self.cache loadCachedObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
+    [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
     {
         handlerCalled = YES;
         STAssertNil(object, @"Object not cached");
@@ -73,7 +73,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache loadCachedObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
+    [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertEqualObjects([testDict objectForKey:key], object, @"Object found");
@@ -83,7 +83,7 @@
     
     handlerCalled = NO;
     key = @"key1";
-    [self.cache loadCachedObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
+    [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertNil(object, @"Object not found");
@@ -92,7 +92,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache existsCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
+    [self.cache existsObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
     {
         handlerCalled = YES;
         STAssertFalse(exists, @"Object doesn't exist");
@@ -102,7 +102,7 @@
     
     handlerCalled = NO;
     key = @"key0";
-    [self.cache existsCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
+    [self.cache existsObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertTrue(exists, @"Object exists");
@@ -112,7 +112,7 @@
     
     handlerCalled = NO;
     key = @"key1";
-    [self.cache removeCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    [self.cache removeObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
     {
         handlerCalled = YES;
         STAssertTrue(success, @"Removal from memory is always successful");
@@ -123,7 +123,7 @@
     
     handlerCalled = NO;
     key = @"key0";
-    [self.cache removeCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    [self.cache removeObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertTrue(success, @"Removal from memory is always successful");
@@ -133,7 +133,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache existsCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
+    [self.cache existsObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertFalse(exists, @"Object doesn't exist anymore");
@@ -179,7 +179,7 @@
     
     __block BOOL handlerCalled = NO;
     NSString *key = @"key0";
-    [self.cache loadCachedObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
+    [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertNil(object, @"Object not cached");
@@ -202,7 +202,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache loadCachedObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
+    [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertEqualObjects([testDict objectForKey:key], object, @"Object found");
@@ -213,7 +213,7 @@
     
     handlerCalled = NO;
     key = @"key1";
-    [self.cache loadCachedObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
+    [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertNil(object, @"Object not found");
@@ -223,7 +223,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache existsCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
+    [self.cache existsObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertFalse(exists, @"Object doesn't exist");
@@ -234,7 +234,7 @@
     
     handlerCalled = NO;
     key = @"key0";
-    [self.cache existsCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
+    [self.cache existsObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertTrue(exists, @"Object exists");
@@ -245,7 +245,7 @@
     
     handlerCalled = NO;
     key = @"key1";
-    [self.cache removeCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    [self.cache removeObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertTrue(success, nil);
@@ -261,7 +261,7 @@
     
     handlerCalled = NO;
     key = @"key0";
-    [self.cache removeCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    [self.cache removeObjectForKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertTrue(success, nil);
@@ -276,7 +276,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache existsCachedObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
+    [self.cache existsObjectForKey:key locations:theLocation completionHandler:^(BOOL exists, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertFalse(exists, @"Object doesn't exist anymore");

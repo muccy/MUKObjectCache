@@ -63,7 +63,7 @@
 
 #pragma mark - Methods
 
-- (void)loadCachedObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(id, MUKObjectCacheLocation))completionHandler
+- (void)loadObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(id, MUKObjectCacheLocation))completionHandler
 {
     if (key == nil || locations == MUKObjectCacheLocationNone) {
         completionHandler(nil, MUKObjectCacheLocationNone);
@@ -155,7 +155,7 @@
     }
 }
 
-- (void)existsCachedObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL, MUKObjectCacheLocation))completionHandler
+- (void)existsObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL, MUKObjectCacheLocation))completionHandler
 {
     if (key == nil || locations == MUKObjectCacheLocationNone) {
         completionHandler(NO, MUKObjectCacheLocationNone);
@@ -188,7 +188,7 @@
     }
 }
 
-- (void)removeCachedObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL, NSError *, MUKObjectCacheLocation))completionHandler
+- (void)removeObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL, NSError *, MUKObjectCacheLocation))completionHandler
 {
     if (key == nil || locations == MUKObjectCacheLocationNone) {
         completionHandler(NO, nil, MUKObjectCacheLocationNone);

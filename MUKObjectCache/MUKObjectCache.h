@@ -90,7 +90,7 @@ typedef enum {
  `MUKObjectCacheLocationMemory`, but could be called asynchronously if `location`
  is `MUKObjectCacheLocationFile`.
  */
-- (void)loadCachedObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(id object, MUKObjectCacheLocation location))completionHandler;
+- (void)loadObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(id object, MUKObjectCacheLocation location))completionHandler;
 /**
  Save object to requested cache locations.
  
@@ -115,7 +115,7 @@ typedef enum {
  `location` is `MUKObjectCacheLocationMemory`, but is called asynchronously if 
  `location` is `MUKObjectCacheLocationFile`.
  */
-- (void)existsCachedObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL exists, MUKObjectCacheLocation location))completionHandler;
+- (void)existsObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL exists, MUKObjectCacheLocation location))completionHandler;
 /**
  Removes object from requested cache locations.
  
@@ -127,7 +127,7 @@ typedef enum {
  `location` is `MUKObjectCacheLocationMemory`, but is called asynchronously if 
  `location` is `MUKObjectCacheLocationFile`.
  */
-- (void)removeCachedObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL success, NSError *error, MUKObjectCacheLocation location))completionHandler;
+- (void)removeObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL success, NSError *error, MUKObjectCacheLocation location))completionHandler;
 @end
 
 
