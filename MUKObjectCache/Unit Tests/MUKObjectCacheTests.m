@@ -202,6 +202,19 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
+    [self.cache saveObject:[testDict objectForKey:key] forKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+     {
+         handlerCalled = YES;
+         STAssertTrue(success, @"File overwritten");
+         STAssertNil(error, nil);
+         NSFileManager *fm = [[NSFileManager alloc] init];
+         STAssertTrue([fm fileExistsAtPath:[[self.cache fileCacheURLForKey:key] path]], @"File overwritten");
+         STAssertEquals(location, theLocation, nil);
+     }];
+    [MUK waitForCompletion:&handlerCalled timeout:1.0 runLoop:nil];
+    STAssertTrue(handlerCalled, nil);
+    
+    handlerCalled = NO;
     [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
