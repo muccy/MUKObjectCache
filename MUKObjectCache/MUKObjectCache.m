@@ -65,8 +65,10 @@
 
 - (void)loadObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(id, MUKObjectCacheLocation))completionHandler
 {
+    if (!completionHandler) return;
+    
     if (key == nil || locations == MUKObjectCacheLocationNone) {
-        completionHandler(nil, MUKObjectCacheLocationNone);
+        completionHandler(nil, MUKObjectCacheLocationNone);        
         return;
     }
     
@@ -78,6 +80,7 @@
         if (object) {
             // Call completion handler synchronously
             completionHandler(object, MUKObjectCacheLocationMemory);
+            
             return;
         }
         else {
@@ -113,15 +116,21 @@
 
 - (void)saveObject:(id)object forKey:(id<NSCopying>)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL, NSError *, MUKObjectCacheLocation))completionHandler
 {
-    if (object == nil || key == nil || locations == MUKObjectCacheLocationNone) {
-        completionHandler(NO, nil, MUKObjectCacheLocationNone);
+    if (object == nil || key == nil || locations == MUKObjectCacheLocationNone) 
+    {
+        if (completionHandler) {
+            completionHandler(NO, nil, MUKObjectCacheLocationNone);
+        }
+        
         return;
     }
     
     // Save into in-memory cache
     if ([MUK bitmask:locations containsFlag:MUKObjectCacheLocationMemory]) {
         [self.cacheDictionary_ setObject:object forKey:key];
-        completionHandler(YES, nil, MUKObjectCacheLocationMemory);
+        if (completionHandler) {
+            completionHandler(YES, nil, MUKObjectCacheLocationMemory);
+        }
     }
     
     // Save into a file
@@ -144,19 +153,25 @@
                 }
                 
                 // Notify in main queue
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completionHandler(success, (success ? nil : error), MUKObjectCacheLocationFile);
-                });
+                if (completionHandler) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completionHandler(success, (success ? nil : error), MUKObjectCacheLocationFile);
+                    });
+                }
             });
         }
         else {
-            completionHandler(NO, nil, MUKObjectCacheLocationFile);
+            if (completionHandler) {
+                completionHandler(NO, nil, MUKObjectCacheLocationFile);
+            }
         }
     }
 }
 
 - (void)existsObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL, MUKObjectCacheLocation))completionHandler
 {
+    if (!completionHandler) return;
+    
     if (key == nil || locations == MUKObjectCacheLocationNone) {
         completionHandler(NO, MUKObjectCacheLocationNone);
         return;
@@ -191,14 +206,20 @@
 - (void)removeObjectForKey:(id)key locations:(MUKObjectCacheLocation)locations completionHandler:(void (^)(BOOL, NSError *, MUKObjectCacheLocation))completionHandler
 {
     if (key == nil || locations == MUKObjectCacheLocationNone) {
-        completionHandler(NO, nil, MUKObjectCacheLocationNone);
+        if (completionHandler) {
+            completionHandler(NO, nil, MUKObjectCacheLocationNone);
+        }
+        
         return;
     }
     
     // Remove from in-memory cache
     if ([MUK bitmask:locations containsFlag:MUKObjectCacheLocationMemory]) {
         [self.cacheDictionary_ removeObjectForKey:key];
-        completionHandler(YES, nil, MUKObjectCacheLocationMemory);
+        
+        if (completionHandler) {
+            completionHandler(YES, nil, MUKObjectCacheLocationMemory);
+        }
     }
     
     // Remove from filesystem
@@ -219,13 +240,17 @@
                 }
                 
                 // Notify on main queue
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completionHandler(success, (success ? nil : error), MUKObjectCacheLocationFile);
-                });
+                if (completionHandler) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completionHandler(success, (success ? nil : error), MUKObjectCacheLocationFile);
+                    });
+                }
             });
         }
         else {
-            completionHandler(NO, nil, MUKObjectCacheLocationFile);
+            if (completionHandler) {
+                completionHandler(NO, nil, MUKObjectCacheLocationFile);
+            }
         }
     }
 }
