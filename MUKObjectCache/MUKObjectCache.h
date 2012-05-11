@@ -179,3 +179,12 @@ typedef enum {
  */
 - (NSData *)dataForFileCachedObject:(id)object key:(id)key;
 @end
+
+
+@interface MUKObjectCache (MemoryCache)
+/**
+ Removes all memory cached objects.
+ */
+- (void)cleanMemoryCache;
+@end
+

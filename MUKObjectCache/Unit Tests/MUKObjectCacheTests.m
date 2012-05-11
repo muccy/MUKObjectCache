@@ -26,6 +26,7 @@
 #import "MUKObjectCacheTests.h"
 #import "MUKObjectCache.h"
 #import <MUKToolkit/MUKToolkit.h>
+#import <UIKit/UIKit.h>
 
 @interface MUKObjectCacheTests ()
 @property (nonatomic, strong) MUKObjectCache *cache;
@@ -301,6 +302,61 @@
     // Clean
     NSFileManager *fm = [[NSFileManager alloc] init];
     [fm removeItemAtURL:containerURL error:nil];
+}
+
+- (void)testCleanMemoryCache {
+    NSString *key = @"key", *value = @"value";
+    
+    __block BOOL valueCached = NO;
+    [self.cache saveObject:value forKey:key locations:MUKObjectCacheLocationMemory completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    {
+        valueCached = YES;
+    }];
+    STAssertTrue(valueCached, nil);
+    
+    __block BOOL valueFound = NO;
+    [self.cache loadObjectForKey:key locations:MUKObjectCacheLocationMemory completionHandler:^(id object, MUKObjectCacheLocation location) 
+    {
+        valueFound = [object isEqual:value];
+    }];
+    STAssertTrue(valueFound, nil);
+    
+    [self.cache cleanMemoryCache];
+    valueFound = NO;
+    [self.cache loadObjectForKey:key locations:MUKObjectCacheLocationMemory completionHandler:^(id object, MUKObjectCacheLocation location) 
+     {
+         valueFound = [object isEqual:value];
+     }];
+    STAssertFalse(valueFound, nil);
+}
+
+- (void)testMemoryWarning {
+    NSString *key = @"key", *value = @"value";
+    
+    __block BOOL valueCached = NO;
+    [self.cache saveObject:value forKey:key locations:MUKObjectCacheLocationMemory completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+     {
+         valueCached = YES;
+     }];
+    STAssertTrue(valueCached, nil);
+    
+    __block BOOL valueFound = NO;
+    [self.cache loadObjectForKey:key locations:MUKObjectCacheLocationMemory completionHandler:^(id object, MUKObjectCacheLocation location) 
+     {
+         valueFound = [object isEqual:value];
+     }];
+    STAssertTrue(valueFound, nil);
+    
+    self.cache.purgesMemoryCacheWhenReceivesMemoryWarning = YES;
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:UIApplicationDidReceiveMemoryWarningNotification object:[UIApplication sharedApplication]];
+
+    valueFound = NO;
+    [self.cache loadObjectForKey:key locations:MUKObjectCacheLocationMemory completionHandler:^(id object, MUKObjectCacheLocation location) 
+     {
+         valueFound = [object isEqual:value];
+     }];
+    STAssertFalse(valueFound, nil);
 }
 
 @end

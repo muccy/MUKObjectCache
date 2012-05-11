@@ -327,6 +327,13 @@
     return data;
 }
 
+#pragma mark - Memory Cache
+
+- (void)cleanMemoryCache {
+    [self.cacheDictionary_ removeAllObjects];
+    self.cacheDictionary_ = nil;
+}
+
 #pragma mark - Private: Storage
 
 - (NSMutableDictionary *)cacheDictionary_ {
@@ -351,8 +358,7 @@
 
 - (void)memoryWarningNotification_:(NSNotification *)notification {
     if (self.purgesMemoryCacheWhenReceivesMemoryWarning) {
-        [self.cacheDictionary_ removeAllObjects];
-        self.cacheDictionary_ = nil;
+        [self cleanMemoryCache];
     }
 }
 
