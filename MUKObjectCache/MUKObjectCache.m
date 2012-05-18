@@ -28,7 +28,11 @@
 #import "MUKObjectCache_Memory.h"
 
 #import <UIKit/UIKit.h>
-#import <MUKToolkit/MUKToolkit.h>
+
+#import "MUK.h"
+#import "MUK+URL.h"
+#import "MUK+Data.h"
+#import "MUK+String.h"
 
 @implementation MUKObjectCache {
     dispatch_queue_t fileCacheQueue_;
@@ -43,7 +47,7 @@
 
 - (id)init {
     self = [super init];
-    if (self) {
+    if (self) {        
         fileCacheQueue_ = dispatch_queue_create("it.melive.mukit.mukobjectcache.filecache", NULL);
         
         purgesMemoryCacheWhenReceivesMemoryWarning_ = YES;

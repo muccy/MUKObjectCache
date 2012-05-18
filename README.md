@@ -24,25 +24,24 @@ Drag or *Add To Files...* `MUKObjectCache.xcodeproj` to your project.
 
 Please remember not to create a copy of files while adding project: you only need a reference to it.
 
-<img src="http://i.imgur.com/MZZwt.png" />
+<img src="http://i.imgur.com/jIy1x.png" />
 
+Now disclose `MUKObjectCache.xcodeproj` and drag contents of `Dependencies` folder to your project. With this step you are adding `MUKObjectCache` dependencies. If your project already contains dependencies please take care to use updated libraries.
+
+<img src="http://i.imgur.com/W5rJw.png" />
 
 #### Step 2: make your project dependent
 Click on your project and, then, your app target:
 
-<img src="http://i.imgur.com/EZraN.png" />
+<img src="http://i.imgur.com/l8kqQ.png" />
 
-Add dependency clicking on + button in *Target Dependencies* pane and choosing static library target (`MUKObjectCache`):
+Add dependency clicking on + button in *Target Dependencies* pane and choosing static library target (`MUKObjectCache`) and its dependency (`MUKToolkit`):
 
-<img src="http://i.imgur.com/5kKSP.png" />
+<img src="http://i.imgur.com/i90jX.png" />
 
 Link your project clicking on + button in *Link binary with Libraries* pane and choosing static library product (`libMUKObjectCache.a`). Link also submodule dependency (`libMUKToolkit.a`):
 
 <img src="http://i.imgur.com/qWjJw.png" />
-
-Your project, now, should be like this:
-
-<img src="http://i.imgur.com/ich7v.png" />
 
 #### Step 3: link required frameworks
 You need to link those framework in order to support `MUKToolkit` dependency:
@@ -59,14 +58,14 @@ To do so you only need to click on + button in *Link binary with Libraries* pane
 #### Step 4: load categories
 In order to load every method in `MUKToolkit` dependency you need to insert `-ObjC` flag to `Other Linker Flags` in *Build Settings* of your project.
 
-<img src="http://i.imgur.com/a72CX.png" /> 
+<img src="http://i.imgur.com/u9OUD.png" /> 
 
 
 #### Step 5: import headers
 You only need to write `#import <MUKObjectCache/MUKObjectCache.h>` when you need headers.
 You can also import `MUKObjectCache` headers in your `pch` file:
 
-<img src="http://i.imgur.com/HVxPZ.png" />
+<img src="http://i.imgur.com/lLA8i.png" />
 
 
 Documentation
@@ -111,5 +110,3 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [GMGridView]: https://github.com/gmoledina/GMGridView
 [jverkoey iOS Framework]: https://github.com/jverkoey/iOS-Framework
 [appledoc]: https://github.com/tomaz/appledoc
-
-    
