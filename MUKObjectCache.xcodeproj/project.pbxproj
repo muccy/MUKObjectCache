@@ -38,6 +38,24 @@
 		066F84DE154EE57800704724 /* MUKObjectCache_Memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 066F84DD154EE57800704724 /* MUKObjectCache_Memory.h */; };
 		066F84EA154EF58800704724 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066F84C2154EDD7400704724 /* Security.framework */; };
 		066F84EB154EF58F00704724 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066F84C8154EDDFA00704724 /* CoreGraphics.framework */; };
+		06FF1A9D1566A1E20040DA06 /* MUKToolkit.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A941566A1E20040DA06 /* MUKToolkit.h */; };
+		06FF1A9E1566A1E20040DA06 /* MUK.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A951566A1E20040DA06 /* MUK.h */; };
+		06FF1A9F1566A1E20040DA06 /* MUK+String.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A961566A1E20040DA06 /* MUK+String.h */; };
+		06FF1AA01566A1E20040DA06 /* MUK+Date.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A971566A1E20040DA06 /* MUK+Date.h */; };
+		06FF1AA11566A1E20040DA06 /* MUK+Array.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A981566A1E20040DA06 /* MUK+Array.h */; };
+		06FF1AA21566A1E20040DA06 /* MUK+URL.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A991566A1E20040DA06 /* MUK+URL.h */; };
+		06FF1AA31566A1E20040DA06 /* MUK+Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A9A1566A1E20040DA06 /* MUK+Geometry.h */; };
+		06FF1AA41566A1E20040DA06 /* MUK+Object.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A9B1566A1E20040DA06 /* MUK+Object.h */; };
+		06FF1AA51566A1E20040DA06 /* MUK+Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A9C1566A1E20040DA06 /* MUK+Data.h */; };
+		06FF1AB01566A2700040DA06 /* MUKToolkit.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A941566A1E20040DA06 /* MUKToolkit.h */; };
+		06FF1AB11566A2700040DA06 /* MUK.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A951566A1E20040DA06 /* MUK.h */; };
+		06FF1AB21566A2700040DA06 /* MUK+String.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A961566A1E20040DA06 /* MUK+String.h */; };
+		06FF1AB31566A2700040DA06 /* MUK+Date.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A971566A1E20040DA06 /* MUK+Date.h */; };
+		06FF1AB41566A2700040DA06 /* MUK+Array.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A981566A1E20040DA06 /* MUK+Array.h */; };
+		06FF1AB51566A2700040DA06 /* MUK+URL.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A991566A1E20040DA06 /* MUK+URL.h */; };
+		06FF1AB61566A2700040DA06 /* MUK+Geometry.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A9A1566A1E20040DA06 /* MUK+Geometry.h */; };
+		06FF1AB71566A2700040DA06 /* MUK+Object.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A9B1566A1E20040DA06 /* MUK+Object.h */; };
+		06FF1AB81566A2700040DA06 /* MUK+Data.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 06FF1A9C1566A1E20040DA06 /* MUK+Data.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,17 +89,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		06FF1AA61566A2010040DA06 /* Copy MUKToolkit Headers */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = MUK/DependenciesHeaders/MUKToolkit;
+			dstSubfolderSpec = 16;
+			files = (
+				06FF1AB01566A2700040DA06 /* MUKToolkit.h in Copy MUKToolkit Headers */,
+				06FF1AB11566A2700040DA06 /* MUK.h in Copy MUKToolkit Headers */,
+				06FF1AB21566A2700040DA06 /* MUK+String.h in Copy MUKToolkit Headers */,
+				06FF1AB31566A2700040DA06 /* MUK+Date.h in Copy MUKToolkit Headers */,
+				06FF1AB41566A2700040DA06 /* MUK+Array.h in Copy MUKToolkit Headers */,
+				06FF1AB51566A2700040DA06 /* MUK+URL.h in Copy MUKToolkit Headers */,
+				06FF1AB61566A2700040DA06 /* MUK+Geometry.h in Copy MUKToolkit Headers */,
+				06FF1AB71566A2700040DA06 /* MUK+Object.h in Copy MUKToolkit Headers */,
+				06FF1AB81566A2700040DA06 /* MUK+Data.h in Copy MUKToolkit Headers */,
+			);
+			name = "Copy MUKToolkit Headers";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		065906E315662CF80048514B /* libMUKToolkit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUKToolkit.a; path = "Submodules/MUKToolkit/build/Release-iphoneos/libMUKToolkit.a"; sourceTree = "<group>"; };
 		065906E815662D590048514B /* MUKToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUKToolkit.xcodeproj; path = Submodules/MUKToolkit/MUKToolkit.xcodeproj; sourceTree = "<group>"; };
-		0659076F156637DF0048514B /* MUK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MUK.h; path = Submodules/MUKToolkit/MUKToolkit/Classes/Base/MUK.h; sourceTree = SOURCE_ROOT; };
-		06590770156637DF0048514B /* MUK+String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUK+String.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/String/MUK+String.h"; sourceTree = SOURCE_ROOT; };
-		06590771156637DF0048514B /* MUK+Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUK+Date.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Date/MUK+Date.h"; sourceTree = SOURCE_ROOT; };
-		06590772156637DF0048514B /* MUK+Array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUK+Array.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Array/MUK+Array.h"; sourceTree = SOURCE_ROOT; };
-		06590773156637DF0048514B /* MUK+URL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUK+URL.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/URL/MUK+URL.h"; sourceTree = SOURCE_ROOT; };
-		06590774156637DF0048514B /* MUK+Geometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUK+Geometry.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Geometry/MUK+Geometry.h"; sourceTree = SOURCE_ROOT; };
-		06590775156637DF0048514B /* MUK+Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUK+Object.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Object/MUK+Object.h"; sourceTree = SOURCE_ROOT; };
-		06590776156637DF0048514B /* MUK+Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MUK+Data.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Data/MUK+Data.h"; sourceTree = SOURCE_ROOT; };
 		066F8468154ECD6B00704724 /* libMUKObjectCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMUKObjectCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		066F846B154ECD6B00704724 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		066F846F154ECD6B00704724 /* MUKObjectCache-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUKObjectCache-Prefix.pch"; sourceTree = "<group>"; };
@@ -100,6 +132,15 @@
 		066F84C8154EDDFA00704724 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		066F84DD154EE57800704724 /* MUKObjectCache_Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUKObjectCache_Memory.h; sourceTree = "<group>"; };
 		066F84EC154F13A500704724 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		06FF1A941566A1E20040DA06 /* MUKToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUKToolkit.h; path = Submodules/MUKToolkit/MUKToolkit/MUKToolkit.h; sourceTree = "<group>"; };
+		06FF1A951566A1E20040DA06 /* MUK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUK.h; path = Submodules/MUKToolkit/MUKToolkit/Classes/Base/MUK.h; sourceTree = "<group>"; };
+		06FF1A961566A1E20040DA06 /* MUK+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+String.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/String/MUK+String.h"; sourceTree = "<group>"; };
+		06FF1A971566A1E20040DA06 /* MUK+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Date.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Date/MUK+Date.h"; sourceTree = "<group>"; };
+		06FF1A981566A1E20040DA06 /* MUK+Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Array.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Array/MUK+Array.h"; sourceTree = "<group>"; };
+		06FF1A991566A1E20040DA06 /* MUK+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+URL.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/URL/MUK+URL.h"; sourceTree = "<group>"; };
+		06FF1A9A1566A1E20040DA06 /* MUK+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Geometry.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Geometry/MUK+Geometry.h"; sourceTree = "<group>"; };
+		06FF1A9B1566A1E20040DA06 /* MUK+Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Object.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Object/MUK+Object.h"; sourceTree = "<group>"; };
+		06FF1A9C1566A1E20040DA06 /* MUK+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Data.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Data/MUK+Data.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,35 +189,13 @@
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		06590777156638060048514B /* MUKToolkit */ = {
-			isa = PBXGroup;
-			children = (
-				0659076F156637DF0048514B /* MUK.h */,
-				06590770156637DF0048514B /* MUK+String.h */,
-				06590771156637DF0048514B /* MUK+Date.h */,
-				06590772156637DF0048514B /* MUK+Array.h */,
-				06590773156637DF0048514B /* MUK+URL.h */,
-				06590774156637DF0048514B /* MUK+Geometry.h */,
-				06590775156637DF0048514B /* MUK+Object.h */,
-				06590776156637DF0048514B /* MUK+Data.h */,
-			);
-			name = MUKToolkit;
-			sourceTree = "<group>";
-		};
-		06590778156638FC0048514B /* Dependencies Public Headers */ = {
-			isa = PBXGroup;
-			children = (
-				06590777156638060048514B /* MUKToolkit */,
-			);
-			name = "Dependencies Public Headers";
-			sourceTree = "<group>";
-		};
 		066F845D154ECD6A00704724 = {
 			isa = PBXGroup;
 			children = (
 				066F84EC154F13A500704724 /* LICENSE */,
 				065906F615662D600048514B /* Dependencies */,
 				066F846D154ECD6B00704724 /* MUKObjectCache */,
+				06FF1A921566A1B50040DA06 /* Dependencies Headers */,
 				066F8496154ECDFE00704724 /* Unit Tests */,
 				066F846A154ECD6B00704724 /* Frameworks */,
 				066F8469154ECD6B00704724 /* Products */,
@@ -209,7 +228,6 @@
 		066F846D154ECD6B00704724 /* MUKObjectCache */ = {
 			isa = PBXGroup;
 			children = (
-				06590778156638FC0048514B /* Dependencies Public Headers */,
 				066F84BF154ED2BE00704724 /* Private */,
 				066F8470154ECD6B00704724 /* MUKObjectCache.h */,
 				066F8471154ECD6B00704724 /* MUKObjectCache.m */,
@@ -247,6 +265,30 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		06FF1A921566A1B50040DA06 /* Dependencies Headers */ = {
+			isa = PBXGroup;
+			children = (
+				06FF1A931566A1C60040DA06 /* MUKToolkit */,
+			);
+			name = "Dependencies Headers";
+			sourceTree = "<group>";
+		};
+		06FF1A931566A1C60040DA06 /* MUKToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				06FF1A941566A1E20040DA06 /* MUKToolkit.h */,
+				06FF1A951566A1E20040DA06 /* MUK.h */,
+				06FF1A961566A1E20040DA06 /* MUK+String.h */,
+				06FF1A971566A1E20040DA06 /* MUK+Date.h */,
+				06FF1A981566A1E20040DA06 /* MUK+Array.h */,
+				06FF1A991566A1E20040DA06 /* MUK+URL.h */,
+				06FF1A9A1566A1E20040DA06 /* MUK+Geometry.h */,
+				06FF1A9B1566A1E20040DA06 /* MUK+Object.h */,
+				06FF1A9C1566A1E20040DA06 /* MUK+Data.h */,
+			);
+			name = MUKToolkit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -257,6 +299,15 @@
 				066F849F154ECE1F00704724 /* MUKObjectCache.h in Headers */,
 				066F84C1154ED2D900704724 /* MUKObjectCache_Storage.h in Headers */,
 				066F84DE154EE57800704724 /* MUKObjectCache_Memory.h in Headers */,
+				06FF1A9D1566A1E20040DA06 /* MUKToolkit.h in Headers */,
+				06FF1A9E1566A1E20040DA06 /* MUK.h in Headers */,
+				06FF1A9F1566A1E20040DA06 /* MUK+String.h in Headers */,
+				06FF1AA01566A1E20040DA06 /* MUK+Date.h in Headers */,
+				06FF1AA11566A1E20040DA06 /* MUK+Array.h in Headers */,
+				06FF1AA21566A1E20040DA06 /* MUK+URL.h in Headers */,
+				06FF1AA31566A1E20040DA06 /* MUK+Geometry.h in Headers */,
+				06FF1AA41566A1E20040DA06 /* MUK+Object.h in Headers */,
+				06FF1AA51566A1E20040DA06 /* MUK+Data.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +318,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 066F848C154ECD6B00704724 /* Build configuration list for PBXNativeTarget "MUKObjectCache" */;
 			buildPhases = (
+				06FF1AA61566A2010040DA06 /* Copy MUKToolkit Headers */,
 				066F8464154ECD6A00704724 /* Sources */,
 				066F8465154ECD6A00704724 /* Frameworks */,
 				066F8466154ECD6A00704724 /* Headers */,
@@ -472,7 +524,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
 				SDKROOT = iphoneos;
@@ -496,7 +547,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PUBLIC_HEADERS_FOLDER_PATH = Headers;
 				SDKROOT = iphoneos;
@@ -511,6 +561,7 @@
 				DSTROOT = /tmp/MUKObjectCache.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUKObjectCache/MUKObjectCache-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/MUK/DependenciesHeaders";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -523,6 +574,7 @@
 				DSTROOT = /tmp/MUKObjectCache.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUKObjectCache/MUKObjectCache-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/MUK/DependenciesHeaders";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

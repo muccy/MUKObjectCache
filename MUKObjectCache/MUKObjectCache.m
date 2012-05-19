@@ -28,11 +28,7 @@
 #import "MUKObjectCache_Memory.h"
 
 #import <UIKit/UIKit.h>
-
-#import "MUK.h"
-#import "MUK+URL.h"
-#import "MUK+Data.h"
-#import "MUK+String.h"
+#import <MUKToolkit/MUKToolkit.h>
 
 @implementation MUKObjectCache {
     dispatch_queue_t fileCacheQueue_;
