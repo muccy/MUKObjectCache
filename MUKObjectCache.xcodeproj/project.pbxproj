@@ -119,7 +119,7 @@
 		06EEEDEF156949B20090EE76 /* MUK+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Geometry.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Geometry/MUK+Geometry.h"; sourceTree = "<group>"; };
 		06EEEDF0156949B20090EE76 /* MUK+Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Object.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Object/MUK+Object.h"; sourceTree = "<group>"; };
 		06EEEDF1156949B20090EE76 /* MUK+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MUK+Data.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Data/MUK+Data.h"; sourceTree = "<group>"; };
-		06EEEE06156949EF0090EE76 /* libMUKToolkit.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMUKToolkit.a; path = "Submodules/MUKToolkit/build/Release-iphoneos/libMUKToolkit.a"; sourceTree = "<group>"; };
+		06EEEE06156949EF0090EE76 /* libMUKToolkit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUKToolkit.a; path = "Submodules/MUKToolkit/build/Release-iphoneos/libMUKToolkit.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,7 +320,7 @@
 		066F845F154ECD6A00704724 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 066F8462154ECD6A00704724 /* Build configuration list for PBXProject "MUKObjectCache" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -453,6 +453,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -476,6 +477,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -494,6 +496,7 @@
 				DSTROOT = /tmp/MUKObjectCache.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUKObjectCache/MUKObjectCache-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/MUK/DependenciesHeaders";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +510,7 @@
 				DSTROOT = /tmp/MUKObjectCache.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUKObjectCache/MUKObjectCache-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/MUK/DependenciesHeaders";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +527,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUKObjectCache/MUKObjectCache-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "MUKObjectCache/Unit Tests/MUKObjectCacheTests-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,6 +544,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MUKObjectCache/MUKObjectCache-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "MUKObjectCache/Unit Tests/MUKObjectCacheTests-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,6 +555,7 @@
 		066F84E4154EF27200704724 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_THUMB_SUPPORT = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -556,6 +563,7 @@
 		066F84E5154EF27200704724 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_THUMB_SUPPORT = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
