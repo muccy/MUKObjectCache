@@ -37,6 +37,8 @@
 		066F84DE154EE57800704724 /* MUKObjectCache_Memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 066F84DD154EE57800704724 /* MUKObjectCache_Memory.h */; };
 		066F84EA154EF58800704724 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066F84C2154EDD7400704724 /* Security.framework */; };
 		066F84EB154EF58F00704724 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066F84C8154EDDFA00704724 /* CoreGraphics.framework */; };
+		067562EC15D39B4600D72C58 /* MUK+Color.h in Copy MUKToolkit Headers */ = {isa = PBXBuildFile; fileRef = 067562EA15D39B3200D72C58 /* MUK+Color.h */; };
+		067562ED15D39B6200D72C58 /* MUK+Color.h in Headers */ = {isa = PBXBuildFile; fileRef = 067562EA15D39B3200D72C58 /* MUK+Color.h */; };
 		06EEEDF2156949B20090EE76 /* MUKToolkit.h in Headers */ = {isa = PBXBuildFile; fileRef = 06EEEDE9156949B20090EE76 /* MUKToolkit.h */; };
 		06EEEDF3156949B20090EE76 /* MUK.h in Headers */ = {isa = PBXBuildFile; fileRef = 06EEEDEA156949B20090EE76 /* MUK.h */; };
 		06EEEDF4156949B20090EE76 /* MUK+String.h in Headers */ = {isa = PBXBuildFile; fileRef = 06EEEDEB156949B20090EE76 /* MUK+String.h */; };
@@ -84,6 +86,7 @@
 				06EEEE01156949B60090EE76 /* MUK+Geometry.h in Copy MUKToolkit Headers */,
 				06EEEE02156949B60090EE76 /* MUK+Object.h in Copy MUKToolkit Headers */,
 				06EEEE03156949B60090EE76 /* MUK+Data.h in Copy MUKToolkit Headers */,
+				067562EC15D39B4600D72C58 /* MUK+Color.h in Copy MUKToolkit Headers */,
 			);
 			name = "Copy MUKToolkit Headers";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +112,7 @@
 		066F84C8154EDDFA00704724 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		066F84DD154EE57800704724 /* MUKObjectCache_Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUKObjectCache_Memory.h; sourceTree = "<group>"; };
 		066F84EC154F13A500704724 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		067562EA15D39B3200D72C58 /* MUK+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "MUK+Color.h"; path = "Submodules/MUKToolkit/MUKToolkit/Classes/Color/MUK+Color.h"; sourceTree = "<group>"; };
 		06EEEDE6156949820090EE76 /* MUKToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUKToolkit.h; path = Submodules/MUKToolkit/MUKToolkit/MUKToolkit.h; sourceTree = "<group>"; };
 		06EEEDE9156949B20090EE76 /* MUKToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUKToolkit.h; path = Submodules/MUKToolkit/MUKToolkit/MUKToolkit.h; sourceTree = "<group>"; };
 		06EEEDEA156949B20090EE76 /* MUK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUK.h; path = Submodules/MUKToolkit/MUKToolkit/Classes/Base/MUK.h; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 				06EEEDEB156949B20090EE76 /* MUK+String.h */,
 				06EEEDEC156949B20090EE76 /* MUK+Date.h */,
 				06EEEDED156949B20090EE76 /* MUK+Array.h */,
+				067562EA15D39B3200D72C58 /* MUK+Color.h */,
 				06EEEDEE156949B20090EE76 /* MUK+URL.h */,
 				06EEEDEF156949B20090EE76 /* MUK+Geometry.h */,
 				06EEEDF0156949B20090EE76 /* MUK+Object.h */,
@@ -270,6 +275,7 @@
 				06EEEDF8156949B20090EE76 /* MUK+Geometry.h in Headers */,
 				06EEEDF9156949B20090EE76 /* MUK+Object.h in Headers */,
 				06EEEDFA156949B20090EE76 /* MUK+Data.h in Headers */,
+				067562ED15D39B6200D72C58 /* MUK+Color.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
