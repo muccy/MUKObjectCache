@@ -195,7 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 066F848C154ECD6B00704724 /* Build configuration list for PBXNativeTarget "MUKObjectCache" */;
 			buildPhases = (
-				06A2F39515D52DF2006D6768 /* ShellScript */,
+				06A2F39515D52DF2006D6768 /* MUKToolkit Headers */,
 				066F8464154ECD6A00704724 /* Sources */,
 				066F8465154ECD6A00704724 /* Frameworks */,
 				066F8466154ECD6A00704724 /* Headers */,
@@ -308,13 +308,14 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"MUKObjectCache\" \\\n--project-company \"MeLive\" \\\n--company-id \"it.melive\" \\\n--output \"Documentation\" \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"Unit Tests\" \\\n--ignore \"Example\" \\\n--ignore \"Private\" \\\n--ignore \"Submodules\" \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
 		};
-		06A2F39515D52DF2006D6768 /* ShellScript */ = {
+		06A2F39515D52DF2006D6768 /* MUKToolkit Headers */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "MUKToolkit Headers";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
