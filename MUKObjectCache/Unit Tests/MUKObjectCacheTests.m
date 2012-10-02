@@ -50,7 +50,7 @@
 }
 
 - (void)testMemoryCache {
-    NSDictionary *testDict = [[NSDictionary alloc] initWithObjectsAndKeys:@"value0", @"key0", @"value1", @"key1", nil];
+    NSDictionary *testDict = @{@"key0": @"value0", @"key1": @"value1"};
     MUKObjectCacheLocation theLocation = MUKObjectCacheLocationMemory;
     
     __block BOOL handlerCalled = NO;
@@ -64,7 +64,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache saveObject:[testDict objectForKey:key] forKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    [self.cache saveObject:testDict[key] forKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
     {
         handlerCalled = YES;
         STAssertTrue(success, @"Object always saved in memory");
@@ -77,7 +77,7 @@
     [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
-         STAssertEqualObjects([testDict objectForKey:key], object, @"Object found");
+         STAssertEqualObjects(testDict[key], object, @"Object found");
          STAssertEquals(location, theLocation, nil);
      }];
     STAssertTrue(handlerCalled, nil);
@@ -144,7 +144,7 @@
 }
 
 - (void)testFileCache {
-    NSDictionary *testDict = [[NSDictionary alloc] initWithObjectsAndKeys:@"value0", @"key0", @"value1", @"key1", nil];
+    NSDictionary *testDict = @{@"key0": @"value0", @"key1": @"value1"};
     MUKObjectCacheLocation theLocation = MUKObjectCacheLocationFile;
     NSURL *containerURL = [[MUK URLForCachesDirectory] URLByAppendingPathComponent:@"Test"];
     
@@ -190,7 +190,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache saveObject:[testDict objectForKey:key] forKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    [self.cache saveObject:testDict[key] forKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertTrue(success, @"Object should be saved to file");
@@ -203,7 +203,7 @@
     STAssertTrue(handlerCalled, nil);
     
     handlerCalled = NO;
-    [self.cache saveObject:[testDict objectForKey:key] forKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
+    [self.cache saveObject:testDict[key] forKey:key locations:theLocation completionHandler:^(BOOL success, NSError *error, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
          STAssertTrue(success, @"File overwritten");
@@ -219,7 +219,7 @@
     [self.cache loadObjectForKey:key locations:theLocation completionHandler:^(id object, MUKObjectCacheLocation location) 
      {
          handlerCalled = YES;
-         STAssertEqualObjects([testDict objectForKey:key], object, @"Object found");
+         STAssertEqualObjects(testDict[key], object, @"Object found");
          STAssertEquals(location, theLocation, nil);
      }];
     [MUK waitForCompletion:&handlerCalled timeout:1.0 runLoop:nil];

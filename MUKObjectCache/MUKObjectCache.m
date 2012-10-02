@@ -76,7 +76,7 @@
     
     // First try loading from in-memory cache
     if ([MUK bitmask:locations containsFlag:MUKObjectCacheLocationMemory]) {
-        id object = [self.cacheDictionary_ objectForKey:key];
+        id object = (self.cacheDictionary_)[key];
         if (object) {
             // Call completion handler synchronously
             completionHandler(object, MUKObjectCacheLocationMemory);
@@ -127,7 +127,7 @@
     
     // Save into in-memory cache
     if ([MUK bitmask:locations containsFlag:MUKObjectCacheLocationMemory]) {
-        [self.cacheDictionary_ setObject:object forKey:key];
+        (self.cacheDictionary_)[key] = object;
         if (completionHandler) {
             completionHandler(YES, nil, MUKObjectCacheLocationMemory);
         }
